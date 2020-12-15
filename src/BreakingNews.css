@@ -30,7 +30,6 @@
 }
 
 .ticker ul li {
-  text-align: center;
   font-size: 18px;
   line-height: 20px;
   list-style: none;
@@ -54,10 +53,10 @@
   animation-play-state: paused;
 }
 
-.redi {
+/* .redi {
   background: #d23435;
 }
 
 .redi span {
   background: #c22b2c;
-}
+} */

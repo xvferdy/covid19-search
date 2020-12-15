@@ -37,46 +37,46 @@ export default function CovidApp2() {
   //sorted array only country
   let allcountryArr = allcountry.map((country) => country.Country).sort();
   return (
-    <Paper style={{ backgroundColor: "yellow" }}>
+    <Paper
+      style={{
+        textAlign: "center",
+        height: "100vh",
+        backgroundImage: "url(bg2.jpg)",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
+      elevation={0}
+      // variant="outlined"
+      square
+    >
       <BreakingNews />
-      <Paper
-        style={{
-          textAlign: "center",
-          height: "100vh",
-          backgroundColor: "gray",
-        }}
-        elevation={0}
-        variant="outlined"
-        square
-      >
-        <CountryStats2
-          searchCountry={searchCountry}
-          countrySummary={countrySummary}
+      <CountryStats2
+        searchCountry={searchCountry}
+        countrySummary={countrySummary}
+      />
+
+      <datalist id="mylist">
+        {allcountryArr.map((country, i) => (
+          <option key={i} value={country} />
+        ))}
+      </datalist>
+
+      <div style={{ marginTop: "40px" }}>
+        <input
+          style={{
+            height: "50px",
+            width: "360px",
+            fontSize: "20px",
+          }}
+          placeholder="Search..."
+          type="search"
+          list="mylist"
+          autoFocus
+          onChange={(e) => {
+            setSearchCountry(e.target.value);
+          }}
         />
-
-        <datalist id="mylist">
-          {allcountryArr.map((country, i) => (
-            <option key={i} value={country} />
-          ))}
-        </datalist>
-
-        <div style={{ marginTop: "40px", backgroundColor: "purple" }}>
-          <input
-            style={{
-              height: "50px",
-              width: "300px",
-              fontSize: "20px",
-            }}
-            placeholder="Search..."
-            type="search"
-            list="mylist"
-            autoFocus
-            onChange={(e) => {
-              setSearchCountry(e.target.value);
-            }}
-          />
-        </div>
-      </Paper>
+      </div>
     </Paper>
   );
 }

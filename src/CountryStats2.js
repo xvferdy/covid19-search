@@ -26,19 +26,17 @@ export default function CountryStats2({ searchCountry, countrySummary }) {
 
       {searchCountry ? (
         countryStats.length !== 0 ? (
-          <div style={{ height: "170px", backgroundColor: "red" }}>
+          <div style={{ height: "170px" }}>
             <h1>{countryStats[0].Country}</h1>
             <h3>Confirmed: {countryStats[0].TotalConfirmed}</h3>
             <h3>Recovered: {countryStats[0].TotalRecovered}</h3>
             <h3>Deaths: {countryStats[0].TotalDeaths}</h3>
           </div>
         ) : (
-          <h1 style={{ height: "170px", backgroundColor: "red" }}>NO Data!</h1>
+          <h1 style={{ height: "170px" }}>NO Data!</h1>
         )
       ) : (
-        <h2 style={{ height: "170px", backgroundColor: "red" }}>
-          Select Country
-        </h2>
+        <h2 style={{ height: "170px" }}>Select Country</h2>
       )}
 
       {/* <h1 style={{ height: "100px", backgroundColor: "red" }}>
